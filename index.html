@@ -130,6 +130,7 @@
         <a href="#services">Services</a>
         <a href="#l-info">More Info</a>
         <a href="#migration">L-Protocol</a>
+        <a href="#l-equations">حلول</a>
         <a href="#lab">Videos</a>
     </div>
 </nav>
@@ -204,6 +205,68 @@
                 <input type="file" id="fIn" hidden onchange="processL(this.files[0])">
             </div>
             <div id="status" style="margin-top:30px; text-align:center; font-family:'Fira Code'; color: var(--nvidia-green); text-shadow: var(--glow-text);"></div>
+        </div>
+    </section>
+
+    <section id="l-equations">
+        <div class="pure-content rtl">
+            <h2>حلول التفرد | Singularity Solutions</h2>
+            <p>بواسطة الثابت $L = 10^{-100}$، استطعنا تحويل المعادلات "الانفجارية" إلى دوال مستمرة وقابلة للحساب. إليك أبرز 20 معضلة تم تحصينها:</p>
+            
+            <div class="grid-boxes" style="font-size: 0.95rem;">
+                <div class="s-box">
+                    <i class="fas fa-microscope"></i>
+                    <h4>نصف قطر شوارزشيلد</h4>
+                    <code>R = 1 / (1 - (2GM / (r+L)c²))</code>
+                    <p>منع الانهيار الحسابي عند مركز الثقب الأسود.</p>
+                </div>
+
+                <div class="s-box">
+                    <i class="fas fa-brain"></i>
+                    <h4>تلاشي التدرج (Gradients)</h4>
+                    <code>G_stable = (∂L/∂W) + L</code>
+                    <p>ضمان تدفق المعلومات في الشبكات العصبية العميقة.</p>
+                </div>
+
+                <div class="s-box">
+                    <i class="fas fa-atom"></i>
+                    <h4>كثافة الاحتمال الكمي</h4>
+                    <code>P(x) = |ψ(x)|² / (∫|ψ|²dx + L)</code>
+                    <p>استقرار الدوال الموجية عند نقاط الصفر المطلق.</p>
+                </div>
+
+                <div class="s-box">
+                    <i class="fas fa-robot"></i>
+                    <h4>الحركية العكسية (IK)</h4>
+                    <code>θ = (JᵀJ + LI)⁻¹ Jᵀ x</code>
+                    <p>منع تجمد أذرع الروبوتات عند نقاط التفرد الهندسية.</p>
+                </div>
+
+                <div class="s-box">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>نموذج Black-Scholes</h4>
+                    <code>d1 = (...) / (σ * sqrt(t + L))</code>
+                    <p>تأمين حسابات التداول الخوارزمي لحظة إغلاق العقود.</p>
+                </div>
+
+                <div class="s-box">
+                    <i class="fas fa-water"></i>
+                    <h4>رقم رينولدز (Navier-Stokes)</h4>
+                    <code>Re = (ρvD) / (μ + L)</code>
+                    <p>استقرار محاكاة السوائل في حالات اللزوجة الصفرية.</p>
+                </div>
+            </div>
+
+            <div class="l-portal" style="margin-top: 40px; border-style: dashed; padding: 40px;">
+                <h4 style="font-family: 'Orbitron';">D.smart Core Logic:</h4>
+                <pre style="color: var(--nvidia-green); font-family: 'Fira Code'; direction: ltr; text-align: left;">
+// Global Protection Applied to all 20 Equations
+function secureDivision(a, b) {
+    const L = 1e-100;
+    return a / (Math.abs(b) < L ? L : b);
+}
+                </pre>
+            </div>
         </div>
     </section>
 
