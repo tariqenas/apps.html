@@ -73,6 +73,7 @@
         .lang-switch { display: flex; align-items: center; gap: 8px; }
         .lang-btn { background: transparent; border: 1px solid rgba(255,255,255,0.25); color: #fff; padding: 8px 14px; border-radius: 999px; cursor: pointer; font-size: 12px; letter-spacing: 1px; transition: 0.3s; }
         .lang-btn.active { border-color: var(--nvidia-green); background: rgba(118,185,0,0.15); }
+        .menu-toggle { display: none; align-items: center; justify-content: center; width: 42px; height: 42px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); border-radius: 999px; color: #fff; cursor: pointer; font-size: 18px; }
 
         footer { text-align: center; padding: 120px; font-family: 'Orbitron'; font-size: 14px; color: var(--nvidia-green); letter-spacing: 12px; text-shadow: var(--glow-text); }
 
@@ -93,7 +94,13 @@
         @media (max-width: 768px) {
             nav { padding: 20px 18px; }
             .logo-text { font-size: 22px; letter-spacing: 6px; }
-            .nav-menu { width: 100%; justify-content: space-around; }
+            .menu-toggle { display: flex; }
+            .nav-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; z-index: 99; background: rgba(0,0,0,0.95); flex-direction: column; align-items: stretch; padding: 18px; gap: 14px; border-bottom: 1px solid rgba(118,185,0,0.2); }
+            .nav-menu.open { display: flex; }
+            .nav-menu a { padding: 14px 18px; background: rgba(255,255,255,0.05); border-radius: 12px; }
+            .nav-menu a:hover { background: rgba(118,185,0,0.12); }
+            .nav-menu { width: calc(100% - 36px); margin: 0 18px 0 18px; }
+            .nav-menu a { font-size: 14px; }
             section { padding: 70px 6%; }
             h2 { font-size: 3rem; }
             p { font-size: 1.1rem; line-height: 1.9; }
@@ -131,6 +138,7 @@
 
 <nav>
     <a href="#" class="logo-text">D.smart</a>
+    <button class="menu-toggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
     <div class="nav-menu">
         <a href="#about"><span class="lang lang-en">Identity</span><span class="lang lang-ar">الهوية</span></a>
         <a href="#services"><span class="lang lang-en">Services</span><span class="lang lang-ar">الخدمات</span></a>
@@ -343,6 +351,12 @@ function secureDivision(a, b) {
         localStorage.setItem('siteLang', lang);
     }
     langButtons.forEach(btn => btn.addEventListener('click', () => setLanguage(btn.dataset.lang)));
+
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    menuToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
+    document.querySelectorAll('.nav-menu a').forEach(link => link.addEventListener('click', () => navMenu.classList.remove('open')));
+
     setLanguage(localStorage.getItem('siteLang') || 'en');
 </script>
 
