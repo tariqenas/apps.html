@@ -68,6 +68,11 @@
             text-align: center; cursor: pointer; transition: 0.4s;
         }
         .l-portal:hover { background: rgba(118, 185, 0, 0.1); box-shadow: inset 0 0 50px rgba(118, 185, 0, 0.2); }
+        .lang { display: none; }
+        body.lang-en .lang-en, body.lang-ar .lang-ar { display: initial; }
+        .lang-switch { display: flex; align-items: center; gap: 8px; }
+        .lang-btn { background: transparent; border: 1px solid rgba(255,255,255,0.25); color: #fff; padding: 8px 14px; border-radius: 999px; cursor: pointer; font-size: 12px; letter-spacing: 1px; transition: 0.3s; }
+        .lang-btn.active { border-color: var(--nvidia-green); background: rgba(118,185,0,0.15); }
 
         footer { text-align: center; padding: 120px; font-family: 'Orbitron'; font-size: 14px; color: var(--nvidia-green); letter-spacing: 12px; text-shadow: var(--glow-text); }
 
@@ -116,7 +121,7 @@
         }
     </style>
 </head>
-<body>
+<body class="lang-en">
 
 <div class="universe-engine">
     <div class="black-hole-core"></div>
@@ -127,12 +132,16 @@
 <nav>
     <a href="#" class="logo-text">D.smart</a>
     <div class="nav-menu">
-        <a href="#about">Identity</a>
-        <a href="#services">Services</a>
-        <a href="#l-info">More Info</a>
-        <a href="#migration">L-Protocol</a>
-        <a href="#l-equations">Solutions</a>
-        <a href="#lab">Videos</a>
+        <a href="#about"><span class="lang lang-en">Identity</span><span class="lang lang-ar">الهوية</span></a>
+        <a href="#services"><span class="lang lang-en">Services</span><span class="lang lang-ar">الخدمات</span></a>
+        <a href="#l-info"><span class="lang lang-en">More Info</span><span class="lang lang-ar">المزيد</span></a>
+        <a href="#migration"><span class="lang lang-en">L-Protocol</span><span class="lang lang-ar">بروتوكول L</span></a>
+        <a href="#l-equations"><span class="lang lang-en">Solutions</span><span class="lang lang-ar">حلول</span></a>
+        <a href="#lab"><span class="lang lang-en">Videos</span><span class="lang lang-ar">فيديوهات</span></a>
+    </div>
+    <div class="lang-switch">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ar">AR</button>
     </div>
 </nav>
 
@@ -141,28 +150,28 @@
     <section id="about">
         <div class="pure-content">
             <h2>D.smart</h2>
-            <p>High-performance systems architect and AI engineer. Dedicated to decoding mathematical collapse and securing cyber systems with the L Protocol. We don’t just build interfaces—we create digital universes hardened against singularities.</p>
+            <p><span class="lang lang-en">High-performance systems architect and AI engineer. Dedicated to decoding mathematical collapse and securing cyber systems with the L Protocol. We don’t just build interfaces—we create digital universes hardened against singularities.</span><span class="lang lang-ar">خبير النظم عالية الحمل ومهندس ذكاء اصطناعي. مكرس لفك انهيار الرياضيات وتأمين الأنظمة السيبرانية عبر بروتوكول L. نحن لا نبني واجهات فقط، بل نصنع أكواناً رقمية محصنة ضد التفرد.</span></p>
         </div>
     </section>
 
     <section id="services">
         <div class="pure-content">
-            <h2>Core Services</h2>
+            <h2><span class="lang lang-en">Core Services</span><span class="lang lang-ar">الخدمات الجوهرية</span></h2>
             <div class="grid-boxes">
                 <div class="s-box">
                     <i class="fas fa-shield-virus"></i>
-                    <h4>Collapse Analysis</h4>
-                    <p>Using the L constant as a protective shield to prevent data decay in high-precision computations and quantum physics models.</p>
+                    <h4><span class="lang lang-en">Collapse Analysis</span><span class="lang lang-ar">تحليل الانهيار</span></h4>
+                    <p><span class="lang lang-en">Using the L constant as a protective shield to prevent data decay in high-precision computations and quantum physics models.</span><span class="lang lang-ar">استخدام الثابت L كدرع وقائي لمنع تحلل البيانات في الحسابات عالية الدقة ونماذج الفيزياء الكمومية.</span></p>
                 </div>
                 <div class="s-box">
                     <i class="fas fa-microchip"></i>
-                    <h4>Super System Stability</h4>
-                    <p>Securing software infrastructure against divide-by-zero failures and NaN propagation to keep kernels running continuously.</p>
+                    <h4><span class="lang lang-en">Super System Stability</span><span class="lang lang-ar">استقرار النظم الفائقة</span></h4>
+                    <p><span class="lang lang-en">Securing software infrastructure against divide-by-zero failures and NaN propagation to keep kernels running continuously.</span><span class="lang lang-ar">تأمين البنية التحتية للبرمجيات ضد أخطاء القسمة على صفر وانتشار NaN للحفاظ على استمرار تشغيل النوى.</span></p>
                 </div>
                 <div class="s-box">
                     <i class="fas fa-terminal"></i>
-                    <h4>Intelligent Agent Engineering</h4>
-                    <p>Building self-healing AI agent ecosystems with "Vibe Coding" to execute complex tasks without interruption.</p>
+                    <h4><span class="lang lang-en">Intelligent Agent Engineering</span><span class="lang lang-ar">هندسة الوكلاء الذكيين</span></h4>
+                    <p><span class="lang lang-en">Building self-healing AI agent ecosystems with "Vibe Coding" to execute complex tasks without interruption.</span><span class="lang lang-ar">بناء منظومات وكلاء ذكية ذاتية الإصلاح باستخدام "Vibe Coding" لتنفيذ المهام المعقدة دون انقطاع.</span></p>
                 </div>
             </div>
         </div>
@@ -170,26 +179,26 @@
 
     <section id="l-info">
         <div class="pure-content">
-            <h2>About the L Constant</h2>
+            <h2><span class="lang lang-en">About the L Constant</span><span class="lang lang-ar">المزيد عن الثابت L</span></h2>
             <div class="grid-boxes">
                 <div class="s-box" style="grid-column: span 2; border-style: dashed;">
                     <i class="fas fa-microscope"></i>
-                    <h4>Deep Mathematical Philosophy</h4>
-                    <p>In classical computing, division by zero is a software black hole. The L Protocol sets an absolute lower bound $L = 10^{-100}$ as a substitute for mathematical zero. This constant is not just a number; it is an anchor point that prevents functions from diverging and turns inevitable collapse into stable continuity.</p>
+                    <h4><span class="lang lang-en">Deep Mathematical Philosophy</span><span class="lang lang-ar">الفلسفة الرياضية العميقة</span></h4>
+                    <p><span class="lang lang-en">In classical computing, division by zero is a software black hole. The L Protocol sets an absolute lower bound $L = 10^{-100}$ as a substitute for mathematical zero. This constant is not just a number; it is an anchor point that prevents functions from diverging and turns inevitable collapse into stable continuity.</span><span class="lang lang-ar">في الحوسبة التقليدية، تُمثل القسمة على صفر ثقباً أسود برمجياً. بروتوكول L يضع عتبة دنيا مطلقة $L = 10^{-100}$ كبديل للصفر الرياضي. هذا الثابت ليس مجرد رقم؛ إنه نقطة ارتكاز تمنع الدوال من التباعد وتحول الانهيار الحتمي إلى استقرار مستدام.</span></p>
                 </div>
                 <div class="s-box">
                     <i class="fas fa-infinity"></i>
-                    <h4>Singularity Bypass</h4>
-                    <p>When dimensions collapse or density vanishes in physical simulation, L redefines the point "zero" as a defined value, allowing the engine to continue beyond the mathematical event horizon.</p>
+                    <h4><span class="lang lang-en">Singularity Bypass</span><span class="lang lang-ar">تجاوز التفرد</span></h4>
+                    <p><span class="lang lang-en">When dimensions collapse or density vanishes in physical simulation, L redefines the point "zero" as a defined value, allowing the engine to continue beyond the mathematical event horizon.</span><span class="lang lang-ar">عندما تنهار الأبعاد أو يتلاشى الكثافة في المحاكاة الفيزيائية، يعيد L تعريف النقطة "صفر" كقيمة معرفة، مما يسمح للمحرك بالاستمرار خلف أفق الحدث الرياضي.</span></p>
                 </div>
                 <div class="s-box">
                     <i class="fas fa-wave-square"></i>
-                    <h4>Function Stabilization</h4>
-                    <p>L acts as a damping factor to prevent infinite oscillations at critical intersection points in digital signal processing.</p>
+                    <h4><span class="lang lang-en">Function Stabilization</span><span class="lang lang-ar">استقرار الدوال</span></h4>
+                    <p><span class="lang lang-en">L acts as a damping factor to prevent infinite oscillations at critical intersection points in digital signal processing.</span><span class="lang lang-ar">يعمل L كمخفف لمنع التذبذبات اللانهائية عند نقاط التقاطع الحرجة في معالجة الإشارات الرقمية.</span></p>
                 </div>
             </div>
             <div class="l-portal" style="border-style: double; border-width: 3px; cursor: default;">
-                <h4 style="font-family: 'Orbitron';">The Governing Equation</h4>
+                <h4 style="font-family: 'Orbitron';"><span class="lang lang-en">The Governing Equation</span><span class="lang lang-ar">المعادلة الحاكمة</span></h4>
                 <code style="font-family: 'Fira Code'; font-size: 1.8rem;">Stability = Lim(x &rarr; L) [f(x)]</code>
             </div>
         </div>
@@ -197,12 +206,12 @@
 
     <section id="migration">
         <div class="pure-content">
-            <h2>D.smart Code Migration Portal</h2>
-            <p>Inject your code with global stability standards. Our system scans your files and replaces collapse points with an L-based stable environment instantly.</p>
+            <h2><span class="lang lang-en">D.smart Code Migration Portal</span><span class="lang lang-ar">بوابة D.smart للهجرة البرمجية</span></h2>
+            <p><span class="lang lang-en">Inject your code with global stability standards. Our system scans your files and replaces collapse points with an L-based stable environment instantly.</span><span class="lang lang-ar">قم بحقن كودك بمعايير الاستقرار العالمية. نظامنا يفحص ملفاتك ويستبدل نقاط الانهيار ببيئة مستقرة تعتمد على L فوراً.</span></p>
             <div class="l-portal" onclick="document.getElementById('fIn').click()">
                 <i class="fas fa-upload" style="font-size: 50px; color: var(--nvidia-green); margin-bottom: 25px;"></i>
                 <h4 style="font-family: 'Orbitron';">ACTIVATE L-PROTOCOL</h4>
-                <p style="font-size: 14px; opacity: 0.8;">Upload JS, Python, or C++ source files</p>
+                <p style="font-size: 14px; opacity: 0.8;"><span class="lang lang-en">Upload JS, Python, or C++ source files</span><span class="lang lang-ar">حمل ملفات JS أو Python أو C++ المصدرية</span></p>
                 <input type="file" id="fIn" hidden onchange="processL(this.files[0])">
             </div>
             <div id="status" style="margin-top:30px; text-align:center; font-family:'Fira Code'; color: var(--nvidia-green); text-shadow: var(--glow-text);"></div>
@@ -211,55 +220,55 @@
 
     <section id="l-equations">
         <div class="pure-content">
-            <h2>Singularity Solutions</h2>
-            <p>With the constant $L = 10^{-100}$, we transformed explosive equations into continuous, computable functions. Here are the top 20 problems we have hardened:</p>
+            <h2><span class="lang lang-en">Singularity Solutions</span><span class="lang lang-ar">حلول التفرد</span></h2>
+            <p><span class="lang lang-en">With the constant $L = 10^{-100}$, we transformed explosive equations into continuous, computable functions. Here are the top 20 problems we have hardened:</span><span class="lang lang-ar">بواسطة الثابت $L = 10^{-100}$، استطعنا تحويل المعادلات الانفجارية إلى دوال مستمرة وقابلة للحساب. إليك أبرز 20 معضلة تم تحصينها:</span></p>
             
             <div class="grid-boxes" style="font-size: 0.95rem;">
                 <div class="s-box">
                     <i class="fas fa-microscope"></i>
-                    <h4>Schwarzschild Radius</h4>
+                    <h4><span class="lang lang-en">Schwarzschild Radius</span><span class="lang lang-ar">نصف قطر شوارزشيلد</span></h4>
                     <code>R = 1 / (1 - (2GM / (r+L)c²))</code>
-                    <p>Prevent computational collapse at the black hole center.</p>
+                    <p><span class="lang lang-en">Prevent computational collapse at the black hole center.</span><span class="lang lang-ar">منع الانهيار الحسابي عند مركز الثقب الأسود.</span></p>
                 </div>
 
                 <div class="s-box">
                     <i class="fas fa-brain"></i>
-                    <h4>Gradient Vanishing</h4>
+                    <h4><span class="lang lang-en">Gradient Vanishing</span><span class="lang lang-ar">تلاشي التدرج</span></h4>
                     <code>G_stable = (∂L/∂W) + L</code>
-                    <p>Ensure information flow in deep neural networks.</p>
+                    <p><span class="lang lang-en">Ensure information flow in deep neural networks.</span><span class="lang lang-ar">ضمان تدفق المعلومات في الشبكات العصبية العميقة.</span></p>
                 </div>
 
                 <div class="s-box">
                     <i class="fas fa-atom"></i>
-                    <h4>Quantum Probability Density</h4>
+                    <h4><span class="lang lang-en">Quantum Probability Density</span><span class="lang lang-ar">كثافة الاحتمال الكمي</span></h4>
                     <code>P(x) = |ψ(x)|² / (∫|ψ|²dx + L)</code>
-                    <p>Stabilize wavefunctions at absolute zero points.</p>
+                    <p><span class="lang lang-en">Stabilize wavefunctions at absolute zero points.</span><span class="lang lang-ar">استقرار الدوال الموجية عند نقاط الصفر المطلق.</span></p>
                 </div>
 
                 <div class="s-box">
                     <i class="fas fa-robot"></i>
-                    <h4>Inverse Kinematics (IK)</h4>
+                    <h4><span class="lang lang-en">Inverse Kinematics (IK)</span><span class="lang lang-ar">الحركية العكسية</span></h4>
                     <code>θ = (JᵀJ + LI)⁻¹ Jᵀ x</code>
-                    <p>Prevent robotic arms from freezing at geometric singularities.</p>
+                    <p><span class="lang lang-en">Prevent robotic arms from freezing at geometric singularities.</span><span class="lang lang-ar">منع تجمد أذرع الروبوتات عند نقاط التفرد الهندسية.</span></p>
                 </div>
 
                 <div class="s-box">
                     <i class="fas fa-chart-line"></i>
-                    <h4>Black-Scholes Model</h4>
+                    <h4><span class="lang lang-en">Black-Scholes Model</span><span class="lang lang-ar">نموذج Black-Scholes</span></h4>
                     <code>d1 = (...) / (σ * sqrt(t + L))</code>
-                    <p>Secure algorithmic trading calculations at contract closure.</p>
+                    <p><span class="lang lang-en">Secure algorithmic trading calculations at contract closure.</span><span class="lang lang-ar">تأمين حسابات التداول الخوارزمي لحظة إغلاق العقود.</span></p>
                 </div>
 
                 <div class="s-box">
                     <i class="fas fa-water"></i>
-                    <h4>Reynolds Number (Navier-Stokes)</h4>
+                    <h4><span class="lang lang-en">Reynolds Number (Navier-Stokes)</span><span class="lang lang-ar">رقم رينولدز (Navier-ستوكس)</span></h4>
                     <code>Re = (ρvD) / (μ + L)</code>
-                    <p>Stabilize fluid simulation in zero-viscosity scenarios.</p>
+                    <p><span class="lang lang-en">Stabilize fluid simulation in zero-viscosity scenarios.</span><span class="lang lang-ar">استقرار محاكاة السوائل في حالات اللزوجة الصفرية.</span></p>
                 </div>
             </div>
 
             <div class="l-portal" style="margin-top: 40px; border-style: dashed; padding: 40px;">
-                <h4 style="font-family: 'Orbitron';">D.smart Core Logic:</h4>
+                <h4 style="font-family: 'Orbitron';"><span class="lang lang-en">D.smart Core Logic:</span><span class="lang lang-ar">منطق نواة D.smart:</span></h4>
                 <pre style="color: var(--nvidia-green); font-family: 'Fira Code'; direction: ltr; text-align: left;">
 // Global Protection Applied to all 20 Equations
 function secureDivision(a, b) {
@@ -273,7 +282,7 @@ function secureDivision(a, b) {
 
     <section id="lab">
         <div class="pure-content">
-            <h2>Visual Lab</h2>
+            <h2><span class="lang lang-en">Visual Lab</span><span class="lang lang-ar">المختبر المرئي</span></h2>
             <div class="grid-boxes" style="direction: ltr;">
                 <div style="border: 1px solid var(--glass-border); padding: 4px;">
                    <iframe width="560" height="315" src="https://www.youtube.com/embed/aRLvEi4ax-s?si=YgbCRhBLhjgpxUuJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -323,6 +332,18 @@ function secureDivision(a, b) {
         const y = (e.clientY - window.innerHeight / 2) / 85;
         document.querySelector('.black-hole-core').style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
     });
+
+    const langButtons = document.querySelectorAll('.lang-btn');
+    function setLanguage(lang) {
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        document.body.classList.toggle('lang-ar', lang === 'ar');
+        document.body.classList.toggle('lang-en', lang === 'en');
+        langButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
+        localStorage.setItem('siteLang', lang);
+    }
+    langButtons.forEach(btn => btn.addEventListener('click', () => setLanguage(btn.dataset.lang)));
+    setLanguage(localStorage.getItem('siteLang') || 'en');
 </script>
 
 </body>
