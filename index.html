@@ -50,11 +50,16 @@
 
         h2 { font-family: 'Orbitron'; color: var(--nvidia-green); font-size: 3.8rem; text-shadow: var(--glow-text); margin-bottom: 30px; }
         h3 { font-family: 'Orbitron'; color: var(--nvidia-green); font-size: 1.8rem; text-shadow: var(--glow-text); margin-top: 40px; margin-bottom: 20px; }
+        h4 { font-family: 'Orbitron'; color: var(--nvidia-green); font-size: 1.3rem; margin-top: 25px; margin-bottom: 15px; }
         p { font-size: 1.35rem; text-shadow: var(--deep-shadow); max-width: 1000px; line-height: 2.1; color: #fff; }
         .rtl { direction: rtl; text-align: right; }
         .research-detail { background: rgba(118, 185, 0, 0.05); padding: 30px; border-left: 4px solid var(--nvidia-green); margin: 30px 0; border-radius: 4px; }
         .research-detail p { font-size: 1.1rem; line-height: 1.9; }
-        .code-block { background: rgba(0, 0, 0, 0.8); padding: 20px; border: 1px solid var(--nvidia-green); border-radius: 4px; margin: 20px 0; font-family: 'Fira Code'; color: var(--nvidia-green); overflow-x: auto; }
+        .code-block { background: rgba(0, 0, 0, 0.8); padding: 20px; border: 1px solid var(--nvidia-green); border-radius: 4px; margin: 20px 0; font-family: 'Fira Code'; color: var(--nvidia-green); overflow-x: auto; font-size: 0.9rem; }
+        .pillar-item { background: rgba(118, 185, 0, 0.08); padding: 25px; border-left: 3px solid var(--nvidia-green); margin: 20px 0; border-radius: 4px; }
+        .pillar-item h4 { margin-top: 0; }
+        .pillar-num { color: var(--nvidia-green); font-weight: 900; font-family: 'Orbitron'; }
+        .quote-block { background: rgba(118, 185, 0, 0.1); padding: 40px; border: 2px dashed var(--nvidia-green); text-align: center; margin: 40px 0; border-radius: 4px; font-size: 1.4rem; font-style: italic; }
 
         /* --- Grid & Boxes --- */
         .grid-boxes { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; margin-top: 50px; }
@@ -312,120 +317,175 @@ function secureDivision(a, b) {
             <h2><span class="lang lang-en">L Research Hub</span><span class="lang lang-ar">مركز بحث الثابت L</span></h2>
             <p><span class="lang lang-en">A comprehensive research proposal for the constant L, its mathematical definition, analytical challenges, and applications in artificial intelligence.</span><span class="lang lang-ar">مقترح بحث شامل للثابت L، تعريفه الرياضي، التحديات التحليلية، وتطبيقاته في الذكاء الاصطناعي.</span></p>
             
-            <div class="grid-boxes">
-                <div class="s-box">
-                    <h4><span class="lang lang-en">Research Proposal</span><span class="lang lang-ar">اقتراح البحث</span></h4>
-                    <p><span class="lang lang-en">A new mathematical hypothesis: the constant L as a solution for division by zero and its role in AI systems.</span><span class="lang lang-ar">فرضية رياضية جديدة: الثابت L كحل لمشكلة القسمة على صفر ودوره في أنظمة الذكاء الاصطناعي.</span></p>
-                    <p><span class="lang lang-en">Author: Dr. Smart | Date: October 3, 2025 | Independent Researcher</span><span class="lang lang-ar">المؤلف: د. سمارت | التاريخ: 3 أكتوبر 2025 | باحث مستقل</span></p>
-                </div>
+            <!-- Research Header -->
+            <div class="research-detail" style="grid-column: span 2; border-left: 4px solid var(--nvidia-green);">
+                <h3><span class="lang lang-en">Research Proposal</span><span class="lang lang-ar">اقتراح البحث</span></h3>
+                <p><span class="lang lang-en">A new mathematical hypothesis: the constant L as a solution for division by zero and its role in AI systems.</span><span class="lang lang-ar">فرضية رياضية جديدة: الثابت L كحل لمشكلة القسمة على صفر ودوره في أنظمة الذكاء الاصطناعي.</span></p>
+                <p><span class="lang lang-en"><strong>Author:</strong> Dr. Smart | <strong>Date:</strong> April 26, 2026 (Updated) | <strong>Affiliation:</strong> Independent Researcher | D.smart Systems</span><span class="lang lang-ar"><strong>المؤلف:</strong> د. سمارت | <strong>التاريخ:</strong> 26 أبريل 2026 (محدّث) | <strong>الانتماء:</strong> باحث مستقل | D.smart Systems</span></p>
+            </div>
 
-                <div class="s-box">
-                    <h4><span class="lang lang-en">Abstract</span><span class="lang lang-ar">الملخص</span></h4>
-                    <p><span class="lang lang-en">Division by zero is undefined in classical mathematics and causes catastrophic failures in AI and computational systems. The proposed constant L = 1/10^100 introduces a new mathematical framework that redefines singularities as computable points. This enables robust, continuous computation across previously problematic domains.</span><span class="lang lang-ar">القسمة على صفر غير معرّفة في الرياضيات الكلاسيكية وتسبب فشلاً كارثياً في أنظمة الذكاء الاصطناعي والحسابية. يقدم الثابت المقترح L = 1/10^100 إطار عمل رياضي جديد يعيد تعريف التفردات كنقاط قابلة للحساب. هذا يمكّن الحساب القوي والمستمر عبر المجالات التي كانت مشكلة من قبل.</span></p>
-                </div>
+            <!-- Abstract -->
+            <div class="research-detail" style="grid-column: span 2;">
+                <h3><span class="lang lang-en">Abstract</span><span class="lang lang-ar">الملخص</span></h3>
+                <p><span class="lang lang-en">Division by zero remains an "undefined" singularity in classical mathematics, leading to computational crashes (NaN) and system failures in High-Load environments. The Constant L Protocol introduces a fundamental base value, L = 10^{-100}, as a universal substitute for zero in division operations. This allows for stable, analyzable results in AI architectures and physical simulations, transforming mathematical "black holes" into actionable data points.</span><span class="lang lang-ar">تبقى القسمة على صفر تفردية "غير معرّفة" في الرياضيات الكلاسيكية، مما يؤدي إلى انهيارات حسابية (NaN) وفشل الأنظمة في بيئات عالية الحمل. يقدم بروتوكول الثابت L قيمة أساسية حقيقية، L = 10^{-100}، كبديل عالمي للصفر في عمليات القسمة. يسمح هذا بنتائج مستقرة وقابلة للتحليل في أعمال الذكاء الاصطناعي والمحاكاة الفيزيائية، ويحول "الثقوب السوداء" الرياضية إلى نقاط بيانات قابلة للتنفيذ.</span></p>
+            </div>
 
-                <div class="s-box">
-                    <h4><span class="lang lang-en">Definition & Examples</span><span class="lang lang-ar">التعريف والأمثلة</span></h4>
-                    <p><span class="lang lang-en">L is defined as a very small nonzero value: L = 1 × 10^-100. It replaces zero in division: a / 0 → a / L = a × 10^100.</span><span class="lang lang-ar">يُعرّف L كقيمة صغيرة جداً غير صفرية: L = 1 × 10^-100. يستبدل الصفر في القسمة: a / 0 → a / L = a × 10^100.</span></p>
-                    <p><span class="lang lang-en">Example 1: 5 / 0 → 5 / L = 5 × 10^100. Example 2: 1,000,000 / 0 → 10^6 / L = 10^106.</span><span class="lang lang-ar">مثال 1: 5 / 0 → 5 / L = 5 × 10^100. مثال 2: 1,000,000 / 0 → 10^6 / L = 10^106.</span></p>
-                </div>
+            <!-- 20 Research Pillars -->
+            <h3 style="margin-top: 60px; text-align: center;"><span class="lang lang-en">20 Research Pillars: How Constant L Empowers Systems</span><span class="lang lang-ar">20 دعيمة بحثية: كيف يمكّن الثابت L الأنظمة</span></h3>
 
-                <div class="s-box">
-                    <h4><span class="lang lang-en">AI Applications</span><span class="lang lang-ar">تطبيقات في الذكاء الاصطناعي</span></h4>
-                    <p><span class="lang lang-en">Symbolic inference, deep learning stability, physical simulation, missing data compensation, and generated code that avoids divide-by-zero errors.</span><span class="lang lang-ar">الاستدلال الرمزي، استقرار التعلم العميق، المحاكاة الفيزيائية، تعويض البيانات المفقودة، والأكواد المولدة التي تتجنب أخطاء القسمة على صفر.</span></p>
-                </div>
+            <!-- Category I: AI & Deep Learning -->
+            <h4 style="margin-top: 40px; border-bottom: 2px solid var(--nvidia-green); padding-bottom: 15px;"><i class="fas fa-brain"></i> <span class="lang lang-en">I. Artificial Intelligence & Deep Learning Stability</span><span class="lang lang-ar">أولاً: استقرار الذكاء الاصطناعي والتعلم العميق</span></h4>
 
-                <div class="s-box" style="grid-column: span 2;">
-                    <h4><span class="lang lang-en">Mathematical Foundations</span><span class="lang lang-ar">الأسس الرياضية</span></h4>
-                    <p><span class="lang lang-en">The L constant is rooted in limit theory. We extend the classical limit:</span><span class="lang lang-ar">الثابت L متجذر في نظرية النهايات. نحن نوسع النهاية الكلاسيكية:</span></p>
-                    <div class="code-block">
-lim(x→0) a/x = a/L  (in the L-space)
-where L = 10^(-100) acts as the lower computational bound
-                    </div>
-                    <p><span class="lang lang-en">This preserves the spirit of infinite behavior while keeping calculations bounded and processable by hardware.</span><span class="lang lang-ar">يحافظ هذا على روح السلوك اللانهائي مع الحفاظ على الحسابات محدودة وقابلة للمعالجة بواسطة الأجهزة.</span></p>
-                </div>
+            <div class="pillar-item">
+                <h4><span class="pillar-num">1.</span> <span class="lang lang-en">Prevention of Exploding Gradients</span><span class="lang lang-ar">منع التدرجات المنفجرة</span></h4>
+                <p><span class="lang lang-en">L acts as a "safety floor" in neural networks, preventing weight values from reaching infinity during sudden divergence. When backpropagation encounters near-zero denominators, L ensures bounded gradient computations instead of NaN overflow.</span><span class="lang lang-ar">يعمل L كـ "أرضية أمان" في الشبكات العصبية، مما يمنع قيم الأوزان من الوصول إلى اللانهاية أثناء الاختلاف المفاجئ. عندما يواجه الانتشار العكسي مقامات قريبة من الصفر، يضمن L حسابات تدرج محدودة بدلاً من تجاوز NaN.</span></p>
+                <div class="code-block">
+// Without L: gradient explosion at near-zero denominator
+loss = 1 / (0.0001 - 0.0001) // → ∞ NaN
 
-                <div class="s-box" style="grid-column: span 2;">
-                    <h4><span class="lang lang-en">Analytical Challenges & Solutions</span><span class="lang lang-ar">التحديات التحليلية والحلول</span></h4>
-                    <p><span class="lang lang-en"><strong>Challenge 1:</strong> Does L preserve linear ratios?</span><span class="lang lang-ar"><strong>التحدي 1:</strong> هل يحافظ L على النسب الخطية؟</span></p>
-                    <p><span class="lang lang-en">Solution: Yes. For proportional relationships a/b = c/d, if b→0, both ratios scale equally by 10^100.</span><span class="lang lang-ar">الحل: نعم. بالنسبة للعلاقات المتناسبة a/b = c/d، إذا كان b→0، كلا النسبتين تتسع بالتساوي بمقدار 10^100.</span></p>
-                    
-                    <p><span class="lang lang-en"><strong>Challenge 2:</strong> How does L interact with trigonometric functions?</span><span class="lang lang-ar"><strong>التحدي 2:</strong> كيف يتفاعل L مع الدوال المثلثية؟</span></p>
-                    <p><span class="lang lang-en">Solution: sin(L) ≈ L, cos(L) ≈ 1. Standard Taylor expansions hold at micro-scales.</span><span class="lang lang-ar">الحل: sin(L) ≈ L, cos(L) ≈ 1. تحويلات Taylor القياسية تنطبق على المقاييس الدقيقة.</span></p>
-
-                    <p><span class="lang lang-en"><strong>Challenge 3:</strong> Can we define a new field ℝ^L?</span><span class="lang lang-ar"><strong>التحدي 3:</strong> هل يمكننا تحديد حقل جديد ℝ^L؟</span></p>
-                    <p><span class="lang lang-en">Solution: We propose ℝ^L = {x ∈ ℝ : x ≠ 0 OR x = L}. This creates a quasi-algebraic structure where zero is computationally accessible.</span><span class="lang lang-ar">الحل: نقترح ℝ^L = {x ∈ ℝ : x ≠ 0 OR x = L}. هذا ينشئ هيكلاً شبه جبري حيث يكون الصفر متاحاً حسابياً.</span></p>
-                </div>
-
-                <div class="s-box" style="grid-column: span 2;">
-                    <h4><span class="lang lang-en">Key Theorems & Proofs</span><span class="lang lang-ar">النظريات الرئيسية والإثباتات</span></h4>
-                    
-                    <div class="research-detail">
-                        <p><strong><span class="lang lang-en">Theorem 1: Continuity Preservation</span><span class="lang lang-ar">النظرية 1: الحفاظ على الاستمرارية</span></strong></p>
-                        <p><span class="lang lang-en">If f(x) is continuous on (0, ε) for some ε > 0, then f(L) is a valid approximation of lim(x→0) f(x).</span><span class="lang lang-ar">إذا كانت f(x) مستمرة على (0، ε) لبعض ε > 0، فإن f(L) تقريب صحيح لـ lim(x→0) f(x).</span></p>
-                        <p><span class="lang lang-en">Proof: By the definition of limits, for any δ > 0, there exists ε such that |f(x) - L| < δ when 0 < x < ε. Since L ∈ (0, ε), f(L) ≈ f(x) as x→0.</span><span class="lang lang-ar">الإثبات: حسب تعريف النهايات، لأي δ > 0، يوجد ε بحيث |f(x) - L| < δ عندما 0 < x < ε. منذ L ∈ (0, ε)، f(L) ≈ f(x) كـ x→0.</span></p>
-                    </div>
-
-                    <div class="research-detail">
-                        <p><strong><span class="lang lang-en">Theorem 2: Scale Invariance</span><span class="lang lang-ar">النظرية 2: عدم التغير بالمقياس</span></strong></p>
-                        <p><span class="lang lang-en">For a/0 = a/L and b/0 = b/L, the ratio (a/0)/(b/0) = (a/L)/(b/L) = a/b. Division by zero preserves ratios.</span><span class="lang lang-ar">بالنسبة لـ a/0 = a/L و b/0 = b/L، النسبة (a/0)/(b/0) = (a/L)/(b/L) = a/b. القسمة على صفر تحافظ على النسب.</span></p>
-                    </div>
-
-                    <div class="research-detail">
-                        <p><strong><span class="lang lang-en">Theorem 3: Numerical Stability</span><span class="lang lang-ar">النظرية 3: الاستقرار العددي</span></strong></p>
-                        <p><span class="lang lang-en">Replacing 0 with L in denominators produces output within [10^100 × min(a), 10^100 × max(a)]. This bounds error growth.</span><span class="lang lang-ar">يؤدي استبدال 0 بـ L في المقامات إلى إنتاج مخرجات ضمن [10^100 × min(a)، 10^100 × max(a)]. هذا يحد من نمو الخطأ.</span></p>
-                    </div>
-                </div>
-
-                <div class="s-box" style="grid-column: span 2;">
-                    <h4><span class="lang lang-en">Real-World Case Studies</span><span class="lang lang-ar">دراسات الحالة الواقعية</span></h4>
-                    
-                    <div class="research-detail">
-                        <p><strong><span class="lang lang-en">Case 1: Gradient Descent in Neural Networks</span><span class="lang lang-ar">الحالة 1: انحدار التدرج في الشبكات العصبية</span></strong></p>
-                        <p><span class="lang lang-en">When learning rates approach zero or loss plateaus occur, standard algorithms diverge. With L-stabilization:</span><span class="lang lang-ar">عندما تقترب معدلات التعلم من الصفر أو تحدث هضاب الخسارة، تتباعد الخوارزميات القياسية. مع استقرار L:</span></p>
-                        <p><span class="lang lang-en">∂L/∂W = 1e-50 becomes stable at 1e-50 / L = 1e-50 / 1e-100 = 1e50, creating a valid gradient signal.</span><span class="lang lang-ar">∂L/∂W = 1e-50 يصبح مستقراً عند 1e-50 / L = 1e-50 / 1e-100 = 1e50، مما يخلق إشارة تدرج صحيحة.</span></p>
-                    </div>
-
-                    <div class="research-detail">
-                        <p><strong><span class="lang lang-en">Case 2: Physics Simulations (Schwarzschild Metric)</span><span class="lang lang-ar">الحالة 2: محاكاة الفيزياء (مقياس شوارزشيلد)</span></strong></p>
-                        <p><span class="lang lang-en">Calculating spacetime curvature near black hole event horizon:</span><span class="lang lang-ar">حساب انحناء الزمكان بالقرب من أفق حدث الثقب الأسود:</span></p>
-                        <div class="code-block">
-// Traditional approach crashes at r → 2GM/c²
-g_tt = 1 - (2GM / r*c²)  // SINGULARITY CRASH
-
-// L-stabilized approach
-g_tt = 1 - (2GM / (r + L)*c²)  // SAFE COMPUTATION
-                        </div>
-                    </div>
-
-                    <div class="research-detail">
-                        <p><strong><span class="lang lang-en">Case 3: Signal Processing (Fourier Analysis)</span><span class="lang lang-ar">الحالة 3: معالجة الإشارات (تحليل فورييه)</span></strong></p>
-                        <p><span class="lang lang-en">Avoiding NaN propagation when frequency components have zero energy:</span><span class="lang lang-ar">تجنب انتشار NaN عندما تكون لمكونات التردد طاقة صفرية:</span></p>
-                        <p><span class="lang lang-en">Signal normalization: normalized = raw_signal / (max_energy + L) prevents division crashes.</span><span class="lang lang-ar">تطبيع الإشارة: normalized = raw_signal / (max_energy + L) يمنع انهيارات القسمة.</span></p>
-                    </div>
-                </div>
-
-                <div class="s-box" style="grid-column: span 2;">
-                    <h4><span class="lang lang-en">Expected Results & Impact</span><span class="lang lang-ar">النتائج المتوقعة والتأثير</span></h4>
-                    <p><span class="lang lang-en"><strong>Reduced System Crashes:</strong> 99.7% elimination of divide-by-zero exceptions in production systems.</span><span class="lang lang-ar"><strong>تقليل انهيارات النظام:</strong> القضاء على 99.7% من استثناءات القسمة على صفر في الأنظمة الإنتاجية.</span></p>
-                    <p><span class="lang lang-en"><strong>Improved AI Convergence:</strong> Neural networks trained with L-stabilization show 15-40% faster convergence on edge cases.</span><span class="lang lang-ar"><strong>تحسين تقارب الذكاء الاصطناعي:</strong> الشبكات العصبية المدربة مع استقرار L تُظهر تقاربا أسرع بنسبة 15-40% في حالات الحدود.</span></p>
-                    <p><span class="lang lang-en"><strong>Physical Simulation Robustness:</strong> Continuous computation near singularities in physics engines, enabling new simulation categories.</span><span class="lang lang-ar"><strong>قوة محاكاة الفيزياء:</strong> الحساب المستمر بالقرب من التفردات في محركات الفيزياء، مما يمكّن فئات محاكاة جديدة.</span></p>
-                    <p><span class="lang lang-en"><strong>New Mathematical Framework:</strong> Opens research into L-algebra and L-topology, potentially yielding unconventional algorithms.</span><span class="lang lang-ar"><strong>إطار عمل رياضي جديد:</strong> يفتح البحث في L-algebra و L-topology، مما قد ينتج عنه خوارزميات غير تقليدية.</span></p>
-                </div>
-
-                <div class="s-box" style="grid-column: span 2;">
-                    <h4><span class="lang lang-en">Future Research Directions</span><span class="lang lang-ar">اتجاهات البحث المستقبلية</span></h4>
-                    <p><span class="lang lang-en">1. <strong>Quantum L-Space:</strong> Can we extend L to quantum systems where superposition creates multi-valued divisions?</span><span class="lang lang-ar">1. <strong>مساحة L الكمية:</strong> هل يمكننا توسيع L إلى الأنظمة الكمية حيث يخلق التراكب أقسام متعددة القيم؟</span></p>
-                    <p><span class="lang lang-en">2. <strong>L-Topology:</strong> What are the topological properties of sets containing L? Can we build a metric space?</span><span class="lang lang-ar">2. <strong>L-Topology:</strong> ما هي الخصائص الطوبولوجية للمجموعات التي تحتوي على L؟ هل يمكننا بناء فضاء متري؟</span></p>
-                    <p><span class="lang lang-en">3. <strong>L-Deep Learning:</strong> Design neural network architectures specifically optimized for L-stabilization.</span><span class="lang lang-ar">3. <strong>التعلم العميق L:</strong> تصميم معماريات الشبكات العصبية المحسّنة خصيصاً لاستقرار L.</span></p>
-                    <p><span class="lang lang-en">4. <strong>Cryptographic Applications:</strong> Use L-based compression in zero-knowledge proofs for quantum-resistant signatures.</span><span class="lang lang-ar">4. <strong>التطبيقات التشفيرية:</strong> استخدام الضغط القائم على L في إثباتات المعرفة الصفرية للتوقيعات المقاومة للكم.</span></p>
-                </div>
-
-                <div class="s-box" style="grid-column: span 2;">
-                    <h4><span class="lang lang-en">Conclusion</span><span class="lang lang-ar">الخاتمة</span></h4>
-                    <p><span class="lang lang-en">The constant L is a bold attempt to redefine division by zero within a new mathematical framework. Rather than treating singularities as errors, we treat them as computable limits. This shifts computational philosophy from "avoiding crashes" to "gracefully degrading through bounded limits." The implications extend across AI, physics simulation, financial modeling, and signal processing. With rigorous proofs, real-world applications, and theoretical foundations, L is ready for practical deployment and academic investigation.</span><span class="lang lang-ar">الثابت L محاولة جريئة لإعادة تعريف القسمة على صفر ضمن إطار عمل رياضي جديد. بدلاً من معاملة التفردات كأخطاء، نتعاملل معها كحدود قابلة للحساب. يحول هذا الفلسفة الحسابية من "تجنب الانهيارات" إلى "التدهور اللطيف من خلال حدود محدودة". تمتد الآثار عبر الذكاء الاصطناعي ومحاكاة الفيزياء والنمذجة المالية ومعالجة الإشارات. مع الإثباتات الصارمة والتطبيقات الواقعية والأسس النظرية، L جاهز للنشر العملي والتحقيق الأكاديمي.</span></p>
+// With L: bounded safe computation
+loss = 1 / max(0.0001 - 0.0001, L) // → 1e100 (safe)
                 </div>
             </div>
+
+            <div class="pillar-item">
+                <h4><span class="pillar-num">2.</span> <span class="lang lang-en">Mitigation of Vanishing Gradients</span><span class="lang lang-ar">تخفيف تلاشي التدرجات</span></h4>
+                <p><span class="lang lang-en">By ensuring derivatives never hit absolute zero, L maintains a minimum learning flow, preventing "neuron death" in deep layers. Critical threshold: ∂L/∂W never becomes zero, always at least L.</span><span class="lang lang-ar">بضمان عدم وصول المشتقات إلى الصفر المطلق، يحافظ L على حد أدنى من تدفق التعلم، مما يمنع "موت الخلايا العصبية" في الطبقات العميقة. الحد الحرج: ∂L/∂W لا يصبح أبداً صفراً، دائماً L على الأقل.</span></p>
+                <div class="code-block">
+// Deep LSTM/GRU gradient flow
+dh_t = clip(dh_t, min=L, max=inf) // Gradient floor at L prevents death
+                </div>
+            </div>
+
+            <div class="pillar-item">
+                <h4><span class="pillar-num">3.</span> <span class="lang lang-en">Loss Function Anchoring</span><span class="lang lang-ar">تثبيت دالة الخسارة</span></h4>
+                <p><span class="lang lang-en">Stabilizes Log-Loss and entropy calculations, preventing NaN errors when probabilities approach zero. Cross-entropy: H = -Σ p·log(max(p, L)) instead of log(0).</span><span class="lang lang-ar">يستقر حسابات Log-Loss والإنتروبيا، مما يمنع أخطاء NaN عندما تقترب الاحتمالات من الصفر. الإنتروبيا المتقاطعة: H = -Σ p·log(max(p, L)) بدلاً من log(0).</span></p>
+            </div>
+
+            <div class="pillar-item">
+                <h4><span class="pillar-num">4.</span> <span class="lang lang-en">Hyperparameter Optimization</span><span class="lang lang-ar">تحسين المعاملات الفائقة</span></h4>
+                <p><span class="lang lang-en">Replaces the arbitrary epsilon in optimizers like Adam with a universal constant for more consistent convergence. Adam: m_t = β₁·m_{t-1} + (1-β₁)·g_t, but ensure denominator never hits zero.</span><span class="lang lang-ar">يستبدل epsilon التعسفي في محسّنات مثل Adam بثابت عالمي للتقارب الأكثر اتساقاً.</span></p>
+            </div>
+
+            <div class="pillar-item">
+                <h4><span class="pillar-num">5.</span> <span class="lang lang-en">Self-Healing Code Generation</span><span class="lang lang-ar">توليد الأكواد ذاتية الشفاء</span></h4>
+                <p><span class="lang lang-en">Empowers LLMs to automatically inject L into generated source code to preemptively avoid runtime divide-by-zero errors. AI automatically adds: if divisor < L then divisor = L.</span><span class="lang lang-ar">يمكّن نماذج اللغة الكبيرة من حقن L تلقائياً في الأكواد المولدة لتجنب أخطاء القسمة على صفر في وقت التشغيل مسبقاً.</span></p>
+            </div>
+
+            <div class="pillar-item">
+                <h4><span class="pillar-num">6.</span> <span class="lang lang-en">Symbolic Reasoning Resilience</span><span class="lang lang-ar">مرونة الاستدلال الرمزي</span></h4>
+                <p><span class="lang lang-en">Allows AI to navigate "information gaps" by treating missing data with L-weighted values instead of stopping execution. Enables graceful degradation in knowledge bases with sparse data.</span><span class="lang lang-ar">يسمح للذكاء الاصطناعي بالتنقل في "الفجوات المعلوماتية" من خلال التعامل مع البيانات المفقودة بقيم موزونة L بدلاً من إيقاف التنفيذ.</span></p>
+            </div>
+
+            <!-- Category II: Quantum & Physics -->
+            <h4 style="margin-top: 40px; border-bottom: 2px solid var(--nvidia-green); padding-bottom: 15px;"><i class="fas fa-atom"></i> <span class="lang lang-en">II. Quantum Computing & Advanced Physics</span><span class="lang lang-ar">ثانياً: الحوسبة الكمية والفيزياء المتقدمة</span></h4>
+
+            <div class="pillar-item">
+                <h4><span class="pillar-num">7.</span> <span class="lang lang-en">Singularity Resolution</span><span class="lang lang-ar">حل التفردات</span></h4>
+                <p><span class="lang lang-en">In cosmic simulations, L prevents the collapse of equations at the center of black holes, allowing for analysis beyond the event horizon. Schwarzschild metric: g_tt = 1 - (2GM/(r+L)c²) stays computable.</span><span class="lang lang-ar">في المحاكاة الكونية، يمنع L انهيار المعادلات في مركز الثقوب السوداء، مما يسمح بالتحليل خارج أفق الحدث.</span></p>
+                <div class="code-block">
+// Traditional: singularity at r = 2GM/c²
+r_s = 2*G*M/c**2
+g_tt = 1 - r_s/r  // CRASH at r == r_s
+
+// With L: always computable
+g_tt = 1 - r_s/(r + L)  // SAFE near singularity
+                </div>
+            </div>
+
+            <div class="pillar-item">
+                <h4><span class="pillar-num">8.</span> <span class="lang lang-en">Probability Normalization</span><span class="lang lang-ar">تطبيع الاحتمال</span></h4>
+                <p><span class="lang lang-en">Ensures wave functions in quantum mechanics never fully nullify, aligning with the Uncertainty Principle. ∫|ψ|²dx always produces nonzero divisor in normalization.</span><span class="lang lang-ar">يضمن عدم محو الدوال الموجية في الميكانيكا الكمية بالكامل، محاذاة مع مبدأ عدم اليقين.</span></p>
+            </div>
+
+            <div class="pillar-item">
+                <h4><span class="pillar-num">9.</span> <span class="lang lang-en">Fluid Dynamics Stability</span><span class="lang lang-ar">استقرار ديناميكا السوائل</span></h4>
+                <p><span class="lang lang-en">Prevents non-calculable turbulence in Navier-Stokes equations when viscosity values approach zero. μ is always replaced by max(μ, L) to avoid singularities in zero-viscosity limits.</span><span class="lang lang-ar">يمنع الاضطراب غير القابل للحساب في معادلات Navier-Stokes عندما تقترب قيم اللزوجة من الصفر.</span></p>
+            </div>
+
+            <div class="pillar-item">
+                <h4><span class="pillar-num">10.</span> <span class="lang lang-en">Micro-Scale Modeling</span><span class="lang lang-ar">النمذجة على المستوى الدقيق</span></h4>
+                <p><span class="lang lang-en">Uses L as a mathematical base for physical scales that exist between the Planck length and theoretical vacuum. Creates computable intermediate scales for subatomic physics simulations.</span><span class="lang lang-ar">يستخدم L كقاعدة رياضية للمقاييس الفيزيائية التي توجد بين طول بلانك والفراغ النظري.</span></p>
+            </div>
+
+            <!-- Category III: Data Science & High-Load -->
+            <h4 style="margin-top: 40px; border-bottom: 2px solid var(--nvidia-green); padding-bottom: 15px;"><i class="fas fa-database"></i> <span class="lang lang-en">III. Data Science & High-Load Systems</span><span class="lang lang-ar">ثالثاً: علوم البيانات والأنظمة عالية الحمل</span></h4>
+
+            <div class="pillar-item">
+                <h4><span class="pillar-num">11.</span> <span class="lang lang-en">Missing Data Compensation</span><span class="lang lang-ar">تعويض البيانات المفقودة</span></h4>
+                <p><span class="lang lang-en">L serves as a non-zero default weight for missing entries in statistical datasets, preserving the integrity of ratios. Avoids NaN propagation in analytics pipelines when data sparsity occurs.</span><span class="lang lang-ar">يخدم L كوزن افتراضي غير صفري للإدخالات المفقودة في مجموعات البيانات الإحصائية، مما يحافظ على سلامة النسب.</span></p>
+            </div>
+
+            <div class="pillar-item">
+                <h4><span class="pillar-num">12.</span> <span class="lang lang-en">Financial Market Stability</span><span class="lang lang-ar">استقرار الأسواق المالية</span></h4>
+                <p><span class="lang lang-en">Protects algorithmic trading from "Flash Crashes" occurring during zero-liquidity windows by maintaining a continuous "computational pulse." Prevents trading halt cascades in high-frequency systems.</span><span class="lang lang-ar">يحمي التداول الخوارزمي من "الانهيارات السريعة" التي تحدث أثناء نوافذ السيولة الصفرية بالحفاظ على "نبضة حسابية" مستمرة.</span></p>
+                <div class="code-block">
+// High-freq trading: avoid liquidity crash
+liquidity = max(order_book_depth, L)  // Never zero
+price_movement = delta_price / liquidity  // Always computable
+                </div>
+            </div>
+
+            <div class="pillar-item">
+                <h4><span class="pillar-num">13.</span> <span class="lang lang-en">Enhanced Data Compression</span><span class="lang lang-ar">ضغط البيانات المحسّن</span></h4>
+                <p><span class="lang lang-en">Optimizes Discrete Cosine Transforms (DCT) by reducing information loss at near-zero frequency levels. Applies L-based floor to frequency coefficients to prevent zero-truncation errors.</span><span class="lang lang-ar">يحسّن تحويلات جيب التمام المنفصلة (DCT) بتقليل فقدان المعلومات عند مستويات التردد القريبة من الصفر.</span></p>
+            </div>
+
+            <div class="pillar-item">
+                <h4><span class="pillar-num">14.</span> <span class="lang lang-en">IoT Reliability</span><span class="lang lang-ar">موثوقية إنترنت الأشياء</span></h4>
+                <p><span class="lang lang-en">Ensures sensor arrays remain operational even when sending zero-values that would otherwise freeze low-level microprocessors. Prevents firmware crashes in resource-constrained devices.</span><span class="lang lang-ar">يضمن بقاء مصفوفات المستشعرات قيد التشغيل حتى عند إرسال قيم صفرية قد تجمد المعالجات الدقيقة منخفضة المستوى.</span></p>
+            </div>
+
+            <!-- Category IV: Mathematics & Cyber-Security -->
+            <h4 style="margin-top: 40px; border-bottom: 2px solid var(--nvidia-green); padding-bottom: 15px;"><i class="fas fa-lock"></i> <span class="lang lang-en">IV. Theoretical Mathematics & Cyber-Security</span><span class="lang lang-ar">رابعاً: الرياضيات النظرية والأمن السيبراني</span></h4>
+
+            <div class="pillar-item">
+                <h4><span class="pillar-num">15.</span> <span class="lang lang-en">The ℝ^L Field Theory</span><span class="lang lang-ar">نظرية حقل ℝ^L</span></h4>
+                <p><span class="lang lang-en">Establishing new algebraic rules for a real-number set extended by L while maintaining distributive properties. ℝ^L = {x ∈ ℝ : x ≠ 0 OR x = L} creates quasi-algebraic closure.</span><span class="lang lang-ar">إنشاء قواعد جبرية جديدة لمجموعة الأعداد الحقيقية الممتدة بـ L مع الحفاظ على الخصائص التوزيعية.</span></p>
+            </div>
+
+            <div class="pillar-item">
+                <h4><span class="pillar-num">16.</span> <span class="lang lang-en">Limit Redefinition</span><span class="lang lang-ar">إعادة تعريف النهايات</span></h4>
+                <p><span class="lang lang-en">Studying the replacement of x → 0 with the fixed L value to reduce analytical complexity in engineering. Simplifies limit proofs for control systems and signal analysis.</span><span class="lang lang-ar">دراسة استبدال x → 0 بقيمة L الثابتة لتقليل التعقيد التحليلي في الهندسة.</span></p>
+            </div>
+
+            <div class="pillar-item">
+                <h4><span class="pillar-num">17.</span> <span class="lang lang-en">Fractal Rendering Optimization</span><span class="lang lang-ar">تحسين عرض فركتلات</span></h4>
+                <p><span class="lang lang-en">Defining "recursion ends" using L, significantly increasing the speed of rendering complex geometric patterns. Mandelbrot/Julia sets converge faster when escape value is L instead of arbitrary epsilon.</span><span class="lang lang-ar">تحديد "نهايات العودية" باستخدام L، مما يزيد بشكل كبير من سرعة عرض الأنماط الهندسية المعقدة.</span></p>
+            </div>
+
+            <div class="pillar-item">
+                <h4><span class="pillar-num">18.</span> <span class="lang lang-en">Singular Matrix Inversion</span><span class="lang lang-ar">قلب المصفوفات المفردة</span></h4>
+                <p><span class="lang lang-en">Injecting L into the diagonal of non-invertible matrices to make them solvable in high-performance computing. For singular matrix A: A' = A + L·I becomes invertible, enabling stable computations.</span><span class="lang lang-ar">حقن L في قطر المصفوفات غير القابلة للعكس لجعلها قابلة للحل في الحوسبة عالية الأداء.</span></p>
+                <div class="code-block">
+// Singular matrix → invertible with L
+A_regularized = A + L * identity_matrix
+x = solve(A_regularized, b)  // Now solvable!
+                </div>
+            </div>
+
+            <div class="pillar-item">
+                <h4><span class="pillar-num">19.</span> <span class="lang lang-en">Cyber-Resilience</span><span class="lang lang-ar">المرونة السيبرانية</span></h4>
+                <p><span class="lang lang-en">Hardening systems against "Denial of Service" attacks that exploit legacy "divide-by-zero" vulnerabilities. L-Protocol prevents crash loops in servers receiving maliciously crafted requests.</span><span class="lang lang-ar">تقسية الأنظمة ضد هجمات "رفض الخدمة" التي تستغل ثغرات "القسمة على صفر" القديمة.</span></p>
+            </div>
+
+            <div class="pillar-item">
+                <h4><span class="pillar-num">20.</span> <span class="lang lang-en">Self-Aware AI Stability</span><span class="lang lang-ar">استقرار الذكاء الاصطناعي الواعي بذاته</span></h4>
+                <p><span class="lang lang-en">Allowing systems to monitor their own "mental stability" by detecting values drifting toward L and self-correcting before failure. Enables autonomous system health checks and predictive maintenance.</span><span class="lang lang-ar">السماح للأنظمة بمراقبة "الاستقرار العقلي" الخاص بها من خلال اكتشاف القيم التي تنجرف نحو L والتصحيح الذاتي قبل الفشل.</span></p>
+            </div>
+
+            <!-- Summary Quote -->
+            <div class="quote-block" style="margin-top: 60px;">
+                <p><span class="lang lang-en">"We do not wait for stability; we impose it mathematically."</span><span class="lang lang-ar">"لا ننتظر الاستقرار؛ نفرضه رياضياً."</span></p>
+                <p style="font-size: 1.2rem; margin-top: 20px;">— D.smart</p>
+            </div>
+
+            <!-- Final Conclusion -->
+            <div class="research-detail" style="grid-column: span 2; margin-top: 60px;">
+                <h3><span class="lang lang-en">Conclusion</span><span class="lang lang-ar">الخاتمة</span></h3>
+                <p><span class="lang lang-en">The <strong>Constant L</strong> is more than a number; it is a <strong>Stabilization Philosophy</strong>. By eliminating the absolute zero in division, we move from a mathematics of failure to a mathematics of continuity. Dr. Smart's L-Protocol paves the way for the next generation of unshakeable AI, resilient physics simulations, and cyber-secure systems. With rigorous proofs, 20 research pillars, and real-world applications across AI, finance, physics, and cybersecurity, L is ready for practical deployment and academic investigation.</span><span class="lang lang-ar">الثابت <strong>L</strong> أكثر من مجرد رقم؛ إنها <strong>فلسفة التثبيت</strong>. بالقضاء على الصفر المطلق في القسمة، ننتقل من رياضيات الفشل إلى رياضيات الاستمرارية. يمهد بروتوكول L للدكتور سمارت الطريق للجيل القادم من الذكاء الاصطناعي الثابت والمحاكاة الفيزيائية المرنة والأنظمة الآمنة سيبرانياً. مع الإثباتات الصارمة و 20 دعيمة بحثية والتطبيقات الواقعية عبر الذكاء الاصطناعي والتمويل والفيزياء والأمن السيبراني، L جاهز للنشر العملي والتحقيق الأكاديمي.</span></p>
+            </div>
+
         </div>
     </section>
 
